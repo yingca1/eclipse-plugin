@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<welcomePage 
+	title="Welcome to Log4E">
+	<intro>
+<p>Log4E is an Eclipse Plugin which helps you to use your logger easily in Java Projects.</p>
+
+<p>The Plugin's functionality inlcudes inserting new log statement at certain method entries, 
+replacing System.out and System.err statements with logger statements and modifies
+already exisiting logger statements.</p>
+</intro>
+
+	<item><b>Preferences </b>
+	
+<p><action pluginId="org.eclipse.ui" class="org.eclipse.ui.internal.OpenPreferencesAction">Window > Preferences</action> > Log4E</p>
+
+<p><b>It is highly recommended to check the preferences before using the Plugin the first time.</b></p>
+</item>
+
+<item><b>Use </b>
+
+<p>Open context menu of a Java file/Java editor or main menu and perform tasks in submenu "Log4E".</p>
+</item>
+
+	<item><b>Learn More </b> 
+	
+<p><topic id="de.jayefem.log4e.help" href="/de.jayefem.log4e.help/doc/introduction.html">Log4E User Guide</topic></p>
+</item>
+
+	<item><b>Visit Homepage </b> 
+	
+<p><a href="http://www.log4e.de">http://www.log4e.de</a></p>
+</item>
+	
+</welcomePage>

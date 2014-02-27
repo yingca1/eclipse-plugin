@@ -1,0 +1,559 @@
+Version 1.4.2 (Sep 24, 2012)
+	Pro:
+	
+	* Default settings file "de.jayefem.log4e.prefs" can be put into the file system (Plugin location in workspace).
+
+Version 1.4.1 (Sep 15, 2012)
+	Pro:
+	
+	* Even more SLF4J support (added the template variables: ${enclosing_method_argument_placeholders} and ${enclosing_method_arguments_as_parameters})
+	
+	Free:
+	
+	* "Modify" validity check: Abort for this class if imports are missing.
+
+
+Version 1.4 (Sep 7, 2012)
+	Pro:
+	
+	* Real SLF4J support (added the template variables: ${variable_placeholders} and ${variables_as_parameters})
+	
+	Free:
+	
+	* Different logger type or name does not abort the whole operation any more.
+	
+	* Bugfix: Import statement was not removed if not chosen the right logger profile.
+	
+
+Version 1.3.3 (May 30, 2010)
+
+	Free:
+
+	* Bugfix: NPE fixed in Eclipse Helios (Version: 3.6.x)
+
+Version 1.3.2 (Jul 16, 2008)
+	Pro:
+
+	* ${return_type} is available in the editable templates now
+	
+	* All features and bugfixes of the free version are also included in this release
+
+	Free:
+
+	* Bugfix: Log4E made ready for Eclipse Ganymede (3.4.x); first quickfixes to make it runnable again
+	* Bugfix: Button "Insert Variable ..." fixed
+
+
+Version 1.3.1 Pro (Feb 17, 2008)
+
+	* Feature: Log all variables available in catch block
+	* Feature: Log errors only
+	
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.3.1 Free (Feb 17, 2008)
+
+	* Bugfix: NPE if "Skip constructor" is disabled
+	* Bugfix: "org.eclipse.swt.SWTException: Invalid thread access" if compiler problems in file
+	* Bugfix: Newlines aren't preserved when invoking substitution
+	
+	
+Version 1.3.0 Pro (Oct 5, 2007)
+
+	* Delimiter between the method arguments can be customized in the Format preferences page.
+	* Skip toString(), equals() and hashCode() method
+	* Substitution for e.printStackTrace() statements which print to a 
+	  different PrintStream than the default System.err 
+	  (e.g. printStackTrace(System.out))
+	* Bugfix: too many //$NON-NLS-n$ with escaped Strings
+	
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.3.0 Free (Oct 5, 2007)
+
+	* Chinese translation! (translation by Xiaoyun Zhu)
+	* Bugfix: Preview pane displaying behind the main Eclipse window
+	* Bugfix: Editor closed automatically after application of Log4E (only on Eclipse 3.3 with Mylyn)
+	* Bugfix: Warning message for "missing method arguments in logger" was corrected
+	* Bugfix: duplicated return value
+	* Bugfix: Improved check of type and name of an already declared logger
+	* Bugfix: Re-application produced wrong code with two "+ +" under certain conditions
+	* Bugfix: Cascading anonymous classes caused wrong code
+
+Version 1.2.12 Pro (Nov 12, 2006)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.12 Free (Nov 12, 2006)
+
+	* Bugfix: Correct display of dialogs when using two monitors
+	
+
+Version 1.2.11 Pro (Oct 21, 2006)
+
+	* Correction of the "remove" task
+	
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.11 Free (Oct 21, 2006)
+
+	* Correction of the console output
+	* Bugfix: For Eclipse 3.0 and RAD/RSA 6.0. Switched back to Eclipse 3.0 API
+	
+
+Version 1.2.10 Pro (Oct 14, 2006)
+
+	* Added Log4E to the Project Properties Page to distinguish between different project settings
+	* Bugfix: sub packages of packages were not evaluated
+	
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.10 Free (Oct 14, 2006)
+
+	* Correction of the progress monitor
+	* Correction of the console output
+	
+
+Version 1.2.9 Pro (Oct 07, 2006)
+
+	* Bugfix: non formatted statements were not recognized by the "remove" task
+	
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.9 Free (Oct 07, 2006)
+
+	* Progress monitor with status
+	* Bugifx: very long existing logger statements weren't recognized (any more)
+	* Bugifx: Minor formatter issue using "reapply" on logger declarations
+
+
+Version 1.2.8 Pro (Sep 30, 2006)
+
+	* New preferences: Reapplication also to logger declaration when performing "Reapply" (Log4E > Imports and Declaration)
+	* Preview: Only files modified by Log4E are shown in the preview (more user friendly)
+	
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.8 Free (Sep 30, 2006)
+
+	* All warnings are logged in the console view now
+	* Preview is shown only if changes were applied to the sourcecode. More user-friendly now. 
+	* Bugfix: wrong generated code when using "Reapply" under certain circumstances
+
+
+Version 1.2.7 Pro (Sep 12, 2006)
+
+	* Bugfix: NPE when using template without any initializer
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.7 Free (Sep 12, 2006)
+
+	* Bugifx:  Logger as variable declaration within code didn't match (e.g. Monitor log = Monitor.start();). It does now.
+	* Bugifx: Substitution was erroneous  under certain circumstances
+	* Preview window was "on top" which is not user friendly
+
+
+Version 1.2.6 Pro (Jun 22, 2006)
+
+	* Output in only one line (no line breaks due to formatter). See Preferences->Log4E->Format
+	
+	* Bugfix: "Log this position..." preview wizard was not editable
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.6 Free (Jun 22, 2006)
+
+	* Bugifx: wrong generated return value when using generics
+	
+
+Version 1.2.5 Pro (Apr 18, 2006)
+
+	* Bugfix: "Exchange task": the return invocation is not set correctly
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.5 Free (Apr 18, 2006)
+
+	* Bugfix: Log4E locks up Eclipse (if you have problems please see "Known Issues" on the website)
+	* Bugfix: NullPointerException in "Log this position..."
+	
+	
+(Version 1.2.4 is an inofficial test version)
+
+
+Version 1.2.3 Pro (Apr 16, 2006)
+	
+	* "Exchange task" is introduced
+	
+	* Bugfix: IllegalArgumentException in "remove task" under certain circumstances
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.3 Free (Apr 16, 2006)
+
+	* Bugfix: Error message "JDK 1.5 not supported" has been displayed even if the Eclipse API does implement it.
+	
+
+Version 1.2.2 Pro (Apr 15, 2006)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.2 Free (Apr 15, 2006)
+
+	* Bugfix: "org.eclipse.swt.SWTException: Invalid thread access" (this bugfix also avoids deadlocks in Eclipse hopefully)
+	* Bugfix: "The command ("de.jayefem.log4e.RemoveMethodId") is undefined"
+	
+
+Version 1.2.1 Pro (Mar 24, 2006)
+
+	* "Remove task" for several classes
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.1 Free (Mar 24, 2006)
+
+	* Preview for declaration (configurable)
+
+	* Bugfix: Escaped strings were removed in logger messages under certain circumstances
+	
+
+Version 1.2.0 Pro (Mar 22, 2006)
+
+	* "Remove task" is introduced on class and method level
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.2.0 Free (Mar 22, 2006)
+
+	* "Remove task" is introduced on method level
+	* Operation can be aborted by user pressing "Cancel" in the progress monitor
+
+	* Bugfix: NPE when refreshing a file from filesystem
+	* Bugfix: Log4E didn't react sometimes when files were not saved
+	* Bugfix: Escaped strings were removed in logger messages under certain circumstances
+	* Bugfix: The delimiter " - " was removed outside the string context
+
+
+Version 1.1.7 Pro (Mar 04, 2006)
+
+	* Preferences: Declare Logger in inner classes (see "Imports and Declaration" preferences)
+	* Bugfix: NullPointerException when using re-apply with ATG Logging (or any other selfdefined logger which doesn't need a declaration)
+	* Bugfix: Imports of ToStringGenerator weren't generated when performing "Re-Apply" task
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.7 Free (Mar 04, 2006)
+
+	* Advancement of the "Re-Apply" Preview
+	* "Problems warning" reduced to real compiler problems (with problem messages)
+	* Bugfix: Enclosing method arguments weren't provided in task "Substitute"
+	* Bugfix: A different class (instead of the active editor) is logged
+	* Bugfix: removal of sequence of unecessary delimiters like " -  : " in logger statement
+
+
+Version 1.1.6 Pro (Feb 19, 2006)
+
+	* Bugfix: ArrayIndexOutOfBoundsException when using ATG Logging (and other selfdefined loggers which don't need a declaration)
+
+Version 1.1.6 Free (Feb 19, 2006)
+
+	*
+
+Version 1.1.5 Pro (Feb 18, 2006)
+
+	* Collection of variable declarations in for (each) loops for the "Log This Position..." task
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.5 Free (Feb 18, 2006)
+
+	* JDK 1.5 support (see preferences Misc)
+	* Bugfix: ClassCastException when using no block (which is enclosed by {})  in an if-then-else statement
+	* Bugfix: logger was declared as static in a non static inner class
+
+
+Version 1.1.4 Pro (Nov 29, 2005)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.4 Free (Nov 29, 2005)
+
+	* I gave up the fight...
+	   Quickfix: java.lang.RuntimeException: J2SE 1.5 parser not implemented yet
+	  (Relevant for Eclipse 3.0.x and IBM Rational Software users only)
+	  => Some JDK 1.5 features will be disabled and hopefully integrated in the next version (when everything is fixed
+	        and tested...)
+
+
+Version 1.1.3 Pro (Nov 28, 2005)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.3 Free (Nov 28, 2005)
+
+	* Bugfix: java.lang.RuntimeException: J2SE 1.5 parser not implemented yet
+	  (Relevant for Eclipse 3.0.x and IBM Rational Software users only)
+
+
+Version 1.1.2 Pro (Nov 26, 2005)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.2 Free (Nov 26, 2005)
+
+	* Bugfix (finally): java.lang.RuntimeException: J2SE 1.5 parser not implemented yet
+	  (Relevant for Eclipse 3.0.x and IBM Rational Software users only)
+
+
+Version 1.1.1 Pro (Nov 26, 2005)
+
+	* Added built-in templates for "ATG Logging" and "SLF4J"
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.1 Free (Nov 26, 2005)
+
+	* Bugfix: java.lang.RuntimeException: J2SE 1.5 parser not implemented yet
+	  (Relevant for Eclipse 3.0.x and IBM Rational Software  users only)
+
+
+Version 1.1.0 Pro (Nov 20, 2005)
+
+	* Logger Initializer (and comment) configurable as template now
+	* Introduced template variable ${variables} (decouples ${message} from local vars)
+	* Introduced template variable ${message_user}. ${message_user} is used in "Substitute" or "Log this position..." tasks
+	   while ${message} is auto generated (like "start" and "end")
+	* The "Log this position..." task offers now globals vars and available exceptions
+	* "Log this variable" logs the selection of an exception in a catch block from now on
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.1.0 Free (Nov 20, 2005)
+
+	* Save Resources Dialog: Only files which will be modified are offered and there are selectable
+	* Bugfix: Log4E ignored project compiler settings.
+	* Bugfix: java.lang.NoClassDefFoundError: ConfirmSaveModifiedResourcesDialog
+	* Disabled "re-apply" task
+
+
+Version 1.0.4 Pro (Jul 27, 2005)
+
+	* No need to rename the team license_xx.txt since this version
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.0.4 Free (Jul 27, 2005)
+
+	* context menu extended to method selection
+	* bugfixes in "Log at this position..."
+
+
+Version 1.0.3 Pro (Jul 10, 2005)
+
+	* Introduced template variable ${logger}. This is especially useful
+	  for static loggers.
+	* Extended "Log this variable" to any selected variable
+	  (within declaration, assignments, statements, ...)
+
+	* Bugfix: javax.crypto.IllegalBlockSizeException (does not affect free version)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.0.3 Free (Jul 10, 2005)
+
+	 * Minor bugfixes in "Log this variable"
+
+
+Version 1.0.2 Pro (Jul 02, 2005)
+
+	* ToStringBuilder option in "Log at this position..."
+	* New task "Create ToStringStyle class..."
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.0.2 Free (Jul 02, 2005)
+
+	* Bugfixes in "Log at this position..."
+
+
+Version 1.0.1 Pro (Jun 25, 2005)
+
+	* Logging parameter names is now configurable
+	  (see preferences Log4E > Positions)
+	* Use braces when embedding a is<Level>Enabled() statement is configurable
+	  (see preferences Log4E > Statements)
+	* Create declaration comment in one line
+	  (see preferences Log4E > Imports and Declaration > Declaration)
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.0.1 Free (Jun 25, 2005)
+
+	* Extended "Log this variable" to variable assignments
+	* Adapted the output of "Log at this position..." to the
+	  standard output
+
+	* Bugfix: imports were generated twice when invoking "Log this variable"
+	  and if imports didn't exist.
+	* Bugfix: "Log this variable" logged the wrong variable under certain
+	  circumstances
+
+
+Version 1.0 Pro (Jun 12, 2005)
+
+	* Preferences for each project! (Go to: Project > Properties > Log4E)
+	* Editable Preview Wizard
+	* Multiple files enabled by selection of files/packages/sourcefolders/project
+	* One Preview Wizard for multiple files
+	* //$NON-NLS-n$ support
+	* Skip methods with empty body (configurable)
+	* Skip getter/setter (configurable)
+	* Skip if catched exception is thrown again in catch block (configurable)
+	* Skip empty catch block (configurable) or
+	* Different level and message for empty catch block (configurable)
+	* Use of the Jakarta Commons ToStringBuilder with own ToStringStyle (configurable)
+	* Generation of a default ToStringStyle optimized for logger statements
+	* Anonymous class support
+
+	* All features and bugfixes of the free version are also included in this release
+
+Version 1.0 Free (Jun 12, 2005)
+
+	Two features which were formerly available in the free version moved to the pro version (Sorry):
+	* Disabled multiple selection of files
+	* Disabled editable templates (only the predefined templates are available from now on)
+
+	New features and bugfixes:
+	* Changed a few identifiers in the preferences (template definitions didn't change). Checking preferences before using the Plugin the first time is highly recommended!
+	* Direct log of the selected variable or the variable directly above the text cursor
+	* Shortcuts enabled
+	* Method selection within the package explorer
+	* Version controlled files will become automatically comittable when invoking an operation
+	* Preferences for the separator "="
+	* Preferences for confirmation
+	* Preferences: Advanced preview to check your settings
+	* Bugfix: Unreachable code is produced when invoking "insert log statement" if method looks like this: void myMehtod() {throw new RuntimeException();}
+	* Bugfix: "Insert Logger" generates multiple exit logger-statements if a method exits with "return;" (without any return value).
+	* Bugfix: When specifying the level FINEST for "Method Start" and "Method Exit", Statements "Embed isFinestEnabled" setting of UNCHECKED is ignored.  In other words, the isFinestEnabled always appears in the source even when it is turned off.
+	* Bugfix: Formatting issues
+	* Bugfix: Using the modifier task, delimiters where automatically removed under very special circumstances
+	* Bugfix: If return type was fully qualified ("java.lang.String"), Log4E generated wrong code
+	* Bugfix: If "Logger Name" has not been specified, Log4E generated wrong code
+
+
+Version 0.7.7 (Nov 13, 2004)
+
+Minor changes only.
+
+    * Bugfix: Disabled entry in the Main Menu "Edit" because it seems to make trouble.
+    * Better "inner classes" handling (see also preferences "Misc")
+    * Internal Log4j Logging enabled
+
+Version 0.6.6/0.7.6 (Aug 22, 2004)
+
+Note that v0.6.6 is Eclipse 2.x only and v0.7.6 is Eclipse 3.x only
+
+    * Bugfix: correction of the predefined standard templates
+    * Bugfix: modifcation algorithm
+    * Bugfix: ${enclosing_package} now also available in initializer template
+    * Bugfix: Providing package info in preview
+    * Bugfix: Exception is not provided when invoking "insert at this position..." within a catch block
+    * proposal of new user defined template name in the preferences
+    * Preferences for message delimiter (${delimiter_msg})
+
+
+Version 0.7.5 (Aug 15, 2004)
+
+    * Added the template variables: ${enclosing_method_only}, ${enclosing_method_arguments} and ${enclosing_package}
+
+
+Version 0.7.4 (Aug 14, 2004)
+
+    * Bugfix: NPE when unchecking the "Insert info about current method" to off (under Profile>Positions>Other), then inserting a single log statement
+    * Bugfix: Delimiters which are reserved regular expression (e.g. '.', '+', '*' etc.) generate messy sourcecode.
+
+
+Version 0.7.3 (Aug 04, 2004)
+
+    * Preferences options added to control the replacement of System.out's, System.err's and/or e.printStackTrace()'s
+
+
+Version 0.7.2 (Aug 02, 2004)
+
+    * Bugfix: At last, fixed the %label bug (hopefully).
+
+
+Version 0.7.1 (July 29, 2004)
+
+    * Bugfix: Log4E ships with its own log4j jar which seems to clash with jars of log4j of other plugins. This might cause that Log4E refuses to work and might also be the reason why "%pluginName" is being displayed as the label of the menu rather than "Log4E". This quick patch might fix the problem.
+
+
+Version 0.6.0/0.7.0 (July 24, 2004)
+
+Note that v0.6.0 is Eclipse 2.x only and v0.7.0 is Eclipse 3.x only
+
+    * Active support for JDK 1.4 Logger, Log4j, Commons Logging (see preferences)
+    * Template definitions
+    * Logger modification changed (please read the documentaion!)
+    * Switch to JDK 1.4
+    * Preview window with textarea
+    * Bugfix: Array return type supported now
+    * Bugfix: Indent calculation
+    * Bugfix: Cursor position in Eclipse 3.0
+    * Bugfix: Log4E uses user defined formatting now also in Eclipse 3.0
+
+
+Version 0.5.5 (May 27, 2004)
+
+    * Bugfix: equal treatment of "logger" and "this.logger" now
+
+
+Version 0.5.4 (May 26, 2004)
+
+    * Enabled for multiple files
+
+
+Version 0.5.3 (May 22, 2004)
+
+    * Works with Eclipse 3.0 M9 (lower versions don't). It works with Eclipse 2.x anyway.
+    * Providing method info configurable in preferences
+    * Bugfix/Feature: "Insert log statement at this position...": if<Level>Enabled() was inserted even when there was already an if<Level>Enabled() statement
+
+
+Version 0.5.2 (Apr 30, 2004)
+
+    * Include return value at end position
+    * Bugfix: return statement at end of a void method produces unreachable code
+
+
+Version 0.5.1 (Apr 26, 2004)
+
+    * Modification: change class name in initializer if different from actual class name
+
+
+Version 0.5.0 (Apr 24, 2004)
+
+    * Insert logger at textcursor position with wizard support
+    * Preview wizard for all tasks available (check preferences)
+    * Avoid annoying newlines if not needed
+    * Log4E in main menu "Edit"
+    * Definitions of key bindings
+    * Some validity checks
+    * Bugfix: Plugin produces unreachable code on certain conditions
+    * Bugfix: Wrong behaviour with anonymous classes
+    * Bugfix: Logger declaration at wrong position if javadoc includes braces
+
+
+Version 0.4.6 (Apr 9, 2004)
+
+    * Final modifier
+    * Preferences to disable automatic imports and declaration
+    * Preferences to disable the second "exception argument" in error() and fatal()
+    * Bugfix: NPE in classes with abstract methods
+    * Bugfix: Help is now also included in zip
+
+
+Version 0.4.5 (Apr 7, 2004)
+
+    * First official release

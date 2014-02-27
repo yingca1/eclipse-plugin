@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="Log4E User Guide" topic="doc/Main_Page.htm">
+	<!--<topic label="Introduction to Log4E" href="doc/Main_Page.htm">
+		<anchor id="Introduction" />
+	</topic>-->
+	<topic label="Quick Start" href="doc/Quick_Start.htm"/>
+	<topic label="General" href="doc/General.htm"/>
+	<topic label="Preferences" href="doc/Preferences.htm">
+		<topic label="Templates" href="doc/Preferences_Templates.htm"/>
+		<topic label="Format" href="doc/Preferences_Format.htm"/>
+		<topic label="Imports and Declaration.htm" href="doc/Preferences_Imports_and_Declaration.htm"/>
+		<topic label="Misc" href="doc/Preferences_Misc.htm"/>
+		<topic label="Positions" href="doc/Preferences_Positions.htm"/>
+		<topic label="Substitution" href="doc/Preferences_Substitution.htm"/>
+		<topic label="Statements" href="doc/Preferences_Statements.htm"/>
+		<topic label="ToStringGenerator" href="doc/Preferences_ToStringGenerator.htm"/>
+		<topic label="User Interaction.htm" href="doc/Preferences_User_Interaction.htm"/>
+	</topic>
+	<topic label="Tasks">
+		<topic label="Declaration" href="doc/Logger_Declaration.htm"/>
+		<topic label="Insertions" href="doc/Logger_Insertions.htm"/>
+		<topic label="Substitution" href="doc/Substitution_of_System_outs.htm"/>
+		<topic label="Modification" href="doc/Logger_Modification.htm">
+			<topic label="Logger Modification Algorithm" href="doc/Logger_Modification_Algorithm.htm"/>
+		</topic>
+	</topic>
+	<topic label="FAQ" href="doc/Log4E_FAQ.htm"/>
+	<topic label="Change Log" href="doc/Change_Log.htm"/>
+	<topic label="Known Issues" href="doc/Known_Issues.htm"/>
+	<topic label="License" href="doc/License.htm"/>
+	<topic label="Purchase" href="doc/Purchase.htm"/>
+	<topic label="Contact" href="doc/Contact.htm"/>
+</toc>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<colorTheme id="3084" name="Candy Code" modified="2011-10-16 06:16:41" author="Steven Parker">
+    <searchResultIndication color="#937340" />
+    <filteredSearchResultIndication color="#937340" />
+    <occurrenceIndication color="#9999AA" />
+    <writeOccurrenceIndication color="#9999AA" />
+    <findScope color="#111111" />
+    <deletionIndication color="#D25252" />
+    <sourceHoverBackground color="#000000" />
+    <singleLineComment color="#FF9922" italic="false" />
+    <multiLineComment color="#FF9922" italic="false" />
+    <commentTaskTag color="#CCDF32" italic="false" />
+    <javadoc color="#FF9922" bold="false" italic="false" />
+    <javadocLink color="#D9E577" italic="false" />
+    <javadocTag color="#9999AA" bold="true" italic="false" />
+    <javadocKeyword color="#D9E577" italic="false" />
+    <class color="#EECC44" bold="false" underline="false" strikethrough="false" />
+    <interface color="#D197D9" />
+    <method color="#EECC44" />
+    <methodDeclaration color="#EECC44" />
+    <bracket color="#FFFFFF" />
+    <number color="#FF6050" bold="false" />
+    <string color="#FF6050" />
+    <operator color="#66D077" bold="true" />
+    <keyword color="#66D077" bold="true" />
+    <annotation color="#BB88DD" />
+    <staticMethod color="#BB88DD" />
+    <localVariable color="#FFFFFF" />
+    <localVariableDeclaration color="#FFFFFF" />
+    <field color="#FFFFFF" />
+    <staticField color="#EFC090" />
+    <staticFinalField color="#EFC090" />
+    <deprecatedMember color="#D25252" underline="false" strikethrough="true" />
+    <enum color="#4093CC" />
+    <inheritedMethod color="#BED6FF" />
+    <abstractMethod color="#BED6FF" />
+    <parameterVariable color="#79ABFF" />
+    <typeArgument color="#BFA4A4" />
+    <typeParameter color="#BFA4A4" />
+    <constant color="#FF6050" />
+    <background color="#272822" />
+    <currentLine color="#1B1B1B" />
+    <foreground color="#FFFFFF" />
+    <lineNumber color="#928C75" />
+    <selectionBackground color="#606070" />
+    <selectionForeground color="#FFFFFF" />
+</colorTheme>

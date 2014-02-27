@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!-- =======================================================================
+     Copyright:       Copyright (c) 2004-2012
+	 Company:         JayEfEm
+
+	 $Id: plugin.xml,v 1.14 2008/07/12 22:55:07 jan Exp $
+
+	 Project:    Log4E
+     CVS Module: de.jayefem.log4e
+     Author: Jan-Friedrich Mutter (log4e@jayefem.de)
+
+     Description:
+     plugin file (pro)
+
+     ======================================================================= -->
+<plugin>
+
+	<!-- ==================================================================== -->
+	<!-- Popup menu                                                           -->
+	<!-- ==================================================================== -->
+
+	<!-- Package Explorer: Classfile level -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+				objectClass="org.eclipse.jdt.core.ICompilationUnit"
+				nameFilter="*.java"
+				id="de.jayefem.log4e.RootContribution">
+			<menu label="%logger.menu.label" path="additions"
+				id="de.jayefem.log4e.LoggerMenu">
+				<separator name="declareGroup"/>
+				<groupMarker name="addGroup"/>
+				<groupMarker name="errorLogGroup"/>
+				<groupMarker name="modifyGroup"/>
+				<groupMarker name="removeGroup"/>
+				<groupMarker name="exchangeGroup"/>
+				<groupMarker name="replaceGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action
+			label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/declareGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.DeclareAction">
+			</action>
+			<!-- Insert -->
+			<action
+				label="%logger.add.label"
+				tooltip="%logger.add.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.AddAction">
+			</action>
+			<!-- Error Log -->
+			<action 
+				label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ErrorLogAction">
+			</action>
+			<!-- Re-apply -->
+			<action
+				label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ModifyAction">
+			</action>
+			<!-- Remove -->
+			<action label="%logger.remove.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.RemoveAction">
+			</action>
+			<!-- Exchange -->
+			<action label="%logger.exchange.label"
+				tooltip="%logger.exchange.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/exchangeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ExchangeAction">
+			</action>
+			<!-- Substitute -->
+			<action
+				label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ReplaceAction">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- Package Explorer: Class level -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+				objectClass="org.eclipse.jdt.core.IType"
+				id="de.jayefem.log4e.RootContribution">
+			<menu label="%logger.menu.label" path="additions"
+				id="de.jayefem.log4e.LoggerMenu">
+				<separator name="declareGroup"/>
+				<groupMarker name="addGroup"/>
+				<groupMarker name="errorLogGroup"/>
+				<groupMarker name="modifyGroup"/>
+				<groupMarker name="removeGroup"/>
+				<groupMarker name="exchangeGroup"/>
+				<groupMarker name="replaceGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action
+			label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/declareGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.DeclareAction">
+			</action>
+			<!-- Insert -->
+			<action
+				label="%logger.add.label"
+				tooltip="%logger.add.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.AddAction">
+			</action>
+			<!-- Error Log -->
+			<action 
+				label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ErrorLogAction">
+			</action>
+			<!-- Re-Apply -->
+			<action
+				label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ModifyAction">
+			</action>
+			<!-- Remove -->
+			<action label="%logger.remove.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.RemoveAction">
+			</action>
+			<!-- Exchange -->
+			<action label="%logger.exchange.label"
+				tooltip="%logger.exchange.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/exchangeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ExchangeAction">
+			</action>
+			<!-- Substitute -->
+			<action
+				label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ReplaceAction">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- Package Explorer: Package level -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution objectClass="org.eclipse.jdt.core.IPackageFragment"
+			nameFilter="*" id="de.jayefem.log4e.RootContribution">
+			<menu label="%logger.menu.label" path="additions"
+				id="de.jayefem.log4e.LoggerMenu">
+				<separator name="declareGroup"/>
+				<groupMarker name="addGroup"/>
+				<groupMarker name="errorLogGroup"/>
+				<groupMarker name="modifyGroup"/>
+				<groupMarker name="removeGroup"/>
+				<groupMarker name="exchangeGroup"/>
+				<groupMarker name="replaceGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/declareGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.DeclareAction">
+			</action>
+			<!-- Insert -->
+			<action 
+				label="%logger.add.label"
+				tooltip="%logger.add.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.AddAction">
+			</action>
+			<!-- Error Log -->
+			<action 
+				label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ErrorLogAction">
+			</action>
+			<!-- Re-apply -->
+			<action label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ModifyAction">
+			</action>
+			<!-- Remove -->
+			<action label="%logger.remove.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.RemoveAction">
+			</action>
+			<!-- Exchange -->
+			<action label="%logger.exchange.label"
+				tooltip="%logger.exchange.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/exchangeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ExchangeAction">
+			</action>
+			<!-- Substitute -->
+			<action label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ReplaceAction">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- Package Explorer: Source folder level -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+				objectClass="org.eclipse.jdt.core.IPackageFragmentRoot"
+				nameFilter="*"
+				id="de.jayefem.log4e.RootContribution">
+			<menu label="%logger.menu.label" path="additions"
+				id="de.jayefem.log4e.LoggerMenu">
+				<separator name="declareGroup"/>
+				<groupMarker name="addGroup"/>
+				<groupMarker name="errorLogGroup"/>
+				<groupMarker name="modifyGroup"/>
+				<groupMarker name="removeGroup"/>
+				<groupMarker name="exchangeGroup"/>
+				<groupMarker name="replaceGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action
+				label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/declareGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.DeclareAction">
+			</action>
+			<!-- Insert -->
+			<action
+				label="%logger.add.label"
+				tooltip="%logger.add.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.AddAction">
+			</action>
+			<!-- Error Log -->
+			<action 
+				label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ErrorLogAction">
+			</action>
+			<!-- Re-apply -->
+			<action
+				label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ModifyAction">
+			</action>
+			<!-- Remove -->
+			<action label="%logger.remove.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.RemoveAction">
+			</action>
+			<!-- Exchange -->
+			<action label="%logger.exchange.label"
+				tooltip="%logger.exchange.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/exchangeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ExchangeAction">
+			</action>
+			<!-- Substitute -->
+			<action
+				label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ReplaceAction">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- Package Explorer: Project level -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+				objectClass="org.eclipse.jdt.core.IJavaProject"
+				nameFilter="*"
+				id="de.jayefem.log4e.RootContribution">
+			<menu label="%logger.menu.label" path="additions"
+				id="de.jayefem.log4e.LoggerMenu">
+				<separator name="declareGroup"/>
+				<groupMarker name="addGroup"/>
+				<groupMarker name="errorLogGroup"/>
+				<groupMarker name="modifyGroup"/>
+				<groupMarker name="removeGroup"/>
+				<groupMarker name="exchangeGroup"/>
+				<groupMarker name="replaceGroup"/>
+				<separator name="taskGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/declareGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.DeclareAction">
+			</action>
+			<!-- Insert -->
+			<action 
+				label="%logger.add.label" 
+				tooltip="%logger.add.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.AddAction">
+			</action>
+			<!-- Error Log -->
+			<action 
+				label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ErrorLogAction">
+			</action>
+			<!-- Re-apply -->
+			<action label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ModifyAction">
+			</action>
+			<!-- Remove -->
+			<action label="%logger.remove.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.RemoveAction">
+			</action>
+			<!-- Exchange -->
+			<action label="%logger.exchange.label"
+				tooltip="%logger.exchange.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/exchangeGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ExchangeAction">
+			</action>
+			<!-- Substitute -->
+			<action label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				enablesFor="*"
+				id="de.jayefem.log4e.ReplaceAction">
+			</action>
+			<action label="%task.generateToStringBuilder.label"
+				tooltip="%task.generateToStringBuilder.tooltip"
+				class="de.jayefem.log4e.popup.actions.ResourcePopupTaskAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/taskGroup"
+								id="de.jayefem.log4e.GenerateToStringBuilderTask">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- Package Explorer: Method level -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution
+				objectClass="org.eclipse.jdt.core.IMethod"
+				nameFilter="*"
+				id="de.jayefem.log4e.RootContribution">
+			<menu label="%logger.menu.label" path="additions"
+				id="de.jayefem.log4e.LoggerMenu">
+				<groupMarker name="addGroup"/>
+				<groupMarker name="errorLogGroup"/>
+				<groupMarker name="modifyGroup"/>
+				<groupMarker name="removeGroup"/>
+				<groupMarker name="replaceGroup"/>
+			</menu>
+			<!-- Insert -->
+			<action label="%logger.addmethod.label"
+				tooltip="%logger.addmethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.MethodPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup"
+				enablesFor="1"
+				id="de.jayefem.log4e.AddMethodAction">
+			</action>
+			<!-- Error Log -->
+			<action label="%logger.errorLogMethod.label"
+				tooltip="%logger.errorLogMethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				enablesFor="1"
+				id="de.jayefem.log4e.ErrorLogMethodAction">
+			</action>
+			<!-- Re-apply -->
+			<action label="%logger.modifyMethod.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.MethodPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				enablesFor="1"
+				id="de.jayefem.log4e.ModifyMethodAction">
+			</action>
+			<!-- Remove -->
+			<action label="%logger.removeMethod.label"
+				tooltip="%logger.removeMethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.MethodPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				enablesFor="1"
+				id="de.jayefem.log4e.RemoveMethodAction">
+			</action>
+			<!-- Substitute -->
+			<action label="%logger.replacemethod.label"
+				tooltip="%logger.replacemethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.MethodPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				enablesFor="1"
+				id="de.jayefem.log4e.ReplaceMethodAction">
+			</action>
+		</objectContribution>
+	</extension>
+
+	<!-- adds an action to the context menu of Java editors -->
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution
+				id="de.jayefem.log4e.ContributionEditorPopup"
+				targetID="#CompilationUnitEditorContext" >
+			<menu label="%logger.menu.label" path="group.edit"
+				id="de.jayefem.log4e.LoggerMenu">
+				<separator name="declareGroup"/>
+				<separator name="addGroup1"/>
+				<groupMarker name="addGroup2"/>
+				<groupMarker name="addGroup3"/>
+				<groupMarker name="addGroup4"/>
+				<separator name="errorLogGroup"/>
+				<separator name="modifyGroup"/>
+				<separator name="removeGroup"/>
+				<separator name="exchangeGroup"/>
+				<separator name="replaceGroup"/>
+				<separator name="taskGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/declareGroup"
+				id="de.jayefem.log4e.DeclareAction">
+			</action>
+			<!-- Insert -->
+			<action label="%logger.addvariable.label"
+				tooltip="%logger.addvariable.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup1"
+				id="de.jayefem.log4e.AddVariableAction">
+			</action>
+			<action label="%logger.addposition.label"
+				tooltip="%logger.addposition.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup2"
+				id="de.jayefem.log4e.AddPositionAction">
+			</action>
+			<action label="%logger.addmethod.label"
+				tooltip="%logger.addmethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup3"
+				id="de.jayefem.log4e.AddMethodAction">
+			</action>
+			<action label="%logger.add.label" tooltip="%logger.add.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/addGroup4"
+				id="de.jayefem.log4e.AddAction">
+			</action>
+
+			<!-- Error Log -->
+			<action label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				id="de.jayefem.log4e.ErrorLogAction"
+				>
+			</action>
+			<action label="%logger.errorLogMethod.label"
+				tooltip="%logger.errorLogMethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/errorLogGroup"
+				id="de.jayefem.log4e.ErrorLogMethodAction"
+				>
+			</action>
+
+			<!-- Re-apply -->
+			<action label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				id="de.jayefem.log4e.ModifyAction"
+				>
+			</action>
+			<action label="%logger.modifyMethod.label"
+				tooltip="%logger.modify.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/modifyGroup"
+				id="de.jayefem.log4e.ModifyMethodAction"
+				>
+			</action>
+
+			<!-- Remove -->
+			<action label="%logger.remove.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				id="de.jayefem.log4e.RemoveAction"
+				>
+			</action>
+			<action label="%logger.removeMethod.label"
+				tooltip="%logger.remove.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/removeGroup"
+				id="de.jayefem.log4e.RemoveMethodAction">
+			</action>
+
+			<!-- Exchange -->
+			<action label="%logger.exchange.label"
+				tooltip="%logger.exchange.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/exchangeGroup"
+				id="de.jayefem.log4e.ExchangeAction"
+				>
+			</action>
+			<!-- Substitute -->
+			<action label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				id="de.jayefem.log4e.ReplaceAction">
+			</action>
+			<action label="%logger.replacemethod.label"
+				tooltip="%logger.replacemethod.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/replaceGroup"
+				id="de.jayefem.log4e.ReplaceMethodAction">
+			</action>
+
+			<!-- ToStringBuilder -->
+			<action label="%task.generateToStringBuilder.label"
+				tooltip="%task.generateToStringBuilder.tooltip"
+				class="de.jayefem.log4e.popup.actions.EditorPopupTaskAction"
+				menubarPath="de.jayefem.log4e.LoggerMenu/taskGroup"
+				id="de.jayefem.log4e.GenerateToStringBuilderTask"
+				>
+			</action>
+		</viewerContribution>
+	</extension>
+
+	<!-- ==================================================================== -->
+	<!-- ActionSets (Main Menu)                                               -->
+	<!-- ==================================================================== -->
+	<!-- path="org.eclipse.jdt.ui.source.menu/codeGroup" -->
+	<extension point="org.eclipse.ui.actionSets">
+		<actionSet
+				id="de.jayefem.log4e.ActionSet"
+				label="%logger.menu.label"
+				visible="true"
+				description="%logger.menu.label">
+			<menu
+				id="de.jayefem.log4e.LoggerMainMenu"
+				label="%logger.menu.label" path="edit/addtions">
+				<separator name="declareGroup"/>
+				<separator name="addGroup1"/>
+				<groupMarker name="addGroup2"/>
+				<groupMarker name="addGroup3"/>
+				<groupMarker name="addGroup4"/>
+				<separator name="modifyGroup"/>
+				<separator name="removeGroup"/>
+				<separator name="replaceGroup"/>
+				<separator name="taskGroup"/>
+			</menu>
+			<!-- Declare -->
+			<action
+				id="de.jayefem.log4e.DeclareAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/declareGroup"
+				label="%logger.declare.label"
+				tooltip="%logger.declare.tooltip"
+				definitionId="de.jayefem.log4e.DeclareId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<!-- Insert -->
+			<action
+				id="de.jayefem.log4e.AddVariableAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/addGroup1"
+				label="%logger.addvariable.label"
+				tooltip="%logger.addvariable.tooltip"
+				definitionId="de.jayefem.log4e.AddVariableId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.AddPositionAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/addGroup2"
+				label="%logger.addposition.label"
+				tooltip="%logger.addposition.tooltip"
+				definitionId="de.jayefem.log4e.AddPositionId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.AddMethodAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/addGroup3"
+				label="%logger.addmethod.label"
+				tooltip="%logger.addmethod.tooltip"
+				definitionId="de.jayefem.log4e.AddMethodId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.AddAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/addGroup4"
+				label="%logger.add.label"
+				tooltip="%logger.add.tooltip"
+				definitionId="de.jayefem.log4e.AddId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<!-- Error Log -->
+			<action
+				id="de.jayefem.log4e.ErrorLogAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/errorLogGroup"
+				label="%logger.errorLog.label"
+				tooltip="%logger.errorLog.tooltip"
+				definitionId="de.jayefem.log4e.ErrorLogId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.ErrorLogMethodAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/errorLogGroup"
+				label="%logger.errorLogMethod.label"
+				tooltip="%logger.errorLogMethod.tooltip"
+				definitionId="de.jayefem.log4e.LogErrorMethodId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<!-- Re-apply -->
+			<action
+				id="de.jayefem.log4e.ModifyAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/modifyGroup"
+				label="%logger.modify.label"
+				tooltip="%logger.modify.tooltip"
+				definitionId="de.jayefem.log4e.ModifyId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.ModifyMethodAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/modifyGroup"
+				label="%logger.modifyMethod.label"
+				tooltip="%logger.modify.tooltip"
+				definitionId="de.jayefem.log4e.ModifyMethodId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<!-- Remove -->
+			<!--
+			<action
+				id="de.jayefem.log4e.RemoveAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/removeGroup"
+				label="%logger.remove.label"
+				tooltip="%logger.remove.label"
+				definitionId="de.jayefem.log4e.RemoveId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.RemoveMethodAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/removeGroup"
+				label="%logger.removeMethod.label"
+				tooltip="%logger.removeMethod.label"
+				definitionId="de.jayefem.log4e.RemoveMethodId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			-->
+			<!-- Exchange -->
+			<!--
+			<action
+				id="de.jayefem.log4e.ExchangeAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/exchangeGroup"
+				label="%logger.exchange.label"
+				tooltip="%logger.exchange.label"
+				definitionId="de.jayefem.log4e.ExchangeId"
+				>
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			-->
+			<!-- Substitute -->
+			<action
+				id="de.jayefem.log4e.ReplaceAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/replaceGroup"
+				label="%logger.replace.label"
+				tooltip="%logger.replace.tooltip"
+				definitionId="de.jayefem.log4e.ReplaceId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<action
+				id="de.jayefem.log4e.ReplaceMethodAction"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/replaceGroup"
+				label="%logger.replacemethod.label"
+				tooltip="%logger.replacemethod.tooltip"
+				definitionId="de.jayefem.log4e.ReplaceMethodId">
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+			<!-- ToStringBuilderTask -->
+			<action
+				id="de.jayefem.log4e.GenerateToStringBuilderTask"
+				class="de.jayefem.log4e.popup.actions.WorkbenchWindowTaskAction"
+				menubarPath="edit/de.jayefem.log4e.LoggerMainMenu/taskGroup"
+				label="%task.generateToStringBuilder.label"
+				tooltip="%task.generateToStringBuilder.tooltip"
+				>
+				<!-- no shortcut -->
+				<selection class="org.eclipse.jface.text.ITextSelection"
+					name="*.java">
+				</selection>
+			</action>
+		</actionSet>
+	</extension>
+	<!--
+	<extension point="org.eclipse.ui.actionSetPartAssociations">
+		<actionSetPartAssociation
+			targetID="de.jayefem.log4e.ActionSet">
+			<part id="org.eclipse.jdt.ui.CompilationUnitEditor"/>
+			<!-<part id="org.eclipse.jdt.ui.ClassFileEditor"/>->
+		</actionSetPartAssociation>
+	</extension>-->
+
+	<!-- ==================================================================== -->
+	<!-- Commands + Key Bindings                                              -->
+	<!-- ==================================================================== -->
+	<!--<extension point="org.eclipse.ui.bindings">
+		<key
+			sequence="Ctrl+Alt+D"
+			commandId="de.jayefem.log4e.DeclareId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</key>
+	</extension>-->
+	<extension point="org.eclipse.ui.commands">
+		<command
+			name="%logger.declare.label"
+			description="%logger.declare.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.DeclareId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+D"
+			command="de.jayefem.log4e.DeclareId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<!--<keyBinding
+			commandId="de.jayefem.log4e.DeclareId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			keySequence="Ctrl+Alt+D"
+			keyConfigurationId="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>-->
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+D"
+			command="de.jayefem.log4e.DeclareId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<!-- Insert -->
+		<command
+			name="%logger.addvariable.label"
+			description="%logger.addvariable.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.AddVariableId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+P"
+			command="de.jayefem.log4e.AddVariableId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+P"
+			command="de.jayefem.log4e.AddVariableId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.addposition.label"
+			description="%logger.addposition.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.AddPositionId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+O"
+			command="de.jayefem.log4e.AddPositionId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+O"
+			command="de.jayefem.log4e.AddPositionId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.addmethod.label"
+			description="%logger.addmethod.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.AddMethodId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+I"
+			command="de.jayefem.log4e.AddMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+I"
+			command="de.jayefem.log4e.AddMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.add.label"
+			description="%logger.add.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.AddId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+U"
+			command="de.jayefem.log4e.AddId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+U"
+			command="de.jayefem.log4e.AddId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+		
+		
+		<!-- Error Log -->
+		<command
+			name="%logger.errorLogMethod.label"
+			description="%logger.errorLogMethod.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.LogErrorMethodId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+R"
+			command="de.jayefem.log4e.LogErrorMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+R"
+			command="de.jayefem.log4e.LogErrorMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.errorLog.label"
+			description="%logger.errorLog.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.ErrorLogId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+E"
+			command="de.jayefem.log4e.ErrorLogId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+E"
+			command="de.jayefem.log4e.ErrorLogId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<!-- Re-Apply -->
+		<command
+			name="%logger.modifyMethod.label"
+			description="%logger.modifyMethod.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.ModifyMethodId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+M"
+			command="de.jayefem.log4e.ModifyMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+M"
+			command="de.jayefem.log4e.ModifyMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.modify.label"
+			description="%logger.modify.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.ModifyId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+N"
+			command="de.jayefem.log4e.ModifyId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+N"
+			command="de.jayefem.log4e.ModifyId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<!--<command
+			name="%logger.removeMethod.label"
+			description="%logger.removeMethod.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.RemoveMethodId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+R"
+			command="de.jayefem.log4e.RemoveMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+R"
+			command="de.jayefem.log4e.RemoveMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.remove.label"
+			description="%logger.remove.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.RemoveId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+E"
+			command="de.jayefem.log4e.RemoveId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+E"
+			command="de.jayefem.log4e.RemoveId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>-->
+
+		<!-- Substitution -->
+		<command
+			name="%logger.replacemethod.label"
+			description="%logger.replacemethod.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.ReplaceMethodId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+S"
+			command="de.jayefem.log4e.ReplaceMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+S"
+			command="de.jayefem.log4e.ReplaceMethodId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+
+		<command
+			name="%logger.replace.label"
+			description="%logger.replace.label"
+			categoryId="org.eclipse.ui.category.edit"
+			id="de.jayefem.log4e.ReplaceId">
+		</command>
+		<keyBinding
+			string="Ctrl+Alt+A"
+			command="de.jayefem.log4e.ReplaceId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.defaultAcceleratorConfiguration">
+		</keyBinding>
+		<keyBinding
+			string="Ctrl+Alt+L Ctrl+A"
+			command="de.jayefem.log4e.ReplaceId"
+			contextId="org.eclipse.jdt.ui.javaEditorScope"
+			configuration="org.eclipse.ui.emacsAcceleratorConfiguration">
+		</keyBinding>
+	</extension>
+
+	<!-- ==================================================================== -->
+	<!-- Preferences                                                          -->
+	<!-- ==================================================================== -->
+	<extension point = "org.eclipse.ui.preferencePages">
+		<page
+			id="de.jayefem.log4e.preferences.RootPage"
+			class="de.jayefem.log4e.preferences.mappages.TemplatePreferencePage"
+			name="%pluginName">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.Format"
+			class="de.jayefem.log4e.preferences.mappages.FormatPreferencesPage"
+			name="%pref.format"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.Misc"
+			class="de.jayefem.log4e.preferences.mappages.MiscPreferencesPage"
+			name="%pref.misc" category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.Replace"
+			class="de.jayefem.log4e.preferences.mappages.ReplacePreferencesPage"
+			name="%pref.replace"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.UserInteraction"
+			class="de.jayefem.log4e.preferences.mappages.UserInteractionPreferencesPage"
+			name="%pref.user_interaction"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.Declaration"
+			class="de.jayefem.log4e.preferences.mappages.DeclarationPreferencesPage"
+			name="%pref.declaration"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.Statements"
+			class="de.jayefem.log4e.preferences.mappages.StatementsPreferencesPage"
+			name="%pref.statements"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.Position"
+			class="de.jayefem.log4e.preferences.mappages.PositionPreferencesPage"
+			name="%pref.positions"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+		<page
+			id="de.jayefem.log4e.preferences.ToStringBuilder"
+			class="de.jayefem.log4e.preferences.mappages.ToStringBuilderPreferencesPage"
+			name="%pref.tostringbulder"
+			category="de.jayefem.log4e.preferences.RootPage">
+		</page>
+	</extension>
+
+	<!-- ==================================================================== -->
+	<!-- Project Property Page                                                -->
+	<!-- ==================================================================== -->
+	<!-- Version -->
+	<extension point="org.eclipse.ui.propertyPages">
+		<page
+			id="de.jayefem.log4e.propertypages.rootPropertyPage"
+			class="de.jayefem.log4e.propertypages.RootPropertyPage"
+			name="%pluginName"
+			objectClass="org.eclipse.jdt.core.IJavaProject">
+			<filter
+				name="nature"
+				value="org.eclipse.jdt.core.javanature">
+			</filter>
+		</page>
+		<page
+			id="de.jayefem.log4e.propertypages.rootPropertyPage"
+			class="de.jayefem.log4e.propertypages.RootPropertyPage"
+			name="%pluginName"
+			objectClass="org.eclipse.core.resources.IProject">
+			<filter
+				name="nature"
+				value="org.eclipse.jdt.core.javanature">
+			</filter>
+		</page>
+	</extension>
+	
+	<!-- ==================================================================== -->
+	<!-- Export                                                               -->
+	<!-- ==================================================================== -->
+	<extension
+       point="org.eclipse.ui.exportWizards">
+       <page
+			id="de.jayefem.log4e.propertypages.rootPropertyPage"
+			class="de.jayefem.log4e.exportwizards.RootPropertyPage"
+			name="%pluginName"
+			objectClass="org.eclipse.core.resources.IProject">
+			<filter
+				name="nature"
+				value="org.eclipse.jdt.core.javanature">
+			</filter>
+		</page>
+	</extension>
+	<extension
+	       point="org.eclipse.ui.importWizards">
+	    <category
+	          id="de.jayefem.log4e.importwizards.ImportTemplates"
+	          name="%de.jayefem.log4e.importexportwizards.category">
+	    </category>
+	    <wizard
+	          category="de.jayefem.log4e.importwizards.ImportTemplates"
+	          class="de.jayefem.log4e.importwizards.ImportWizard"
+	          icon="icons/sample.gif"
+	          id="de.jayefem.log4e.importwizards.ImportWizard"
+	          name="%de.jayefem.log4e.importwizards.ImportTemplate">
+	       <description>
+	          Import a file from the local file system into the workspace.
+	       </description>
+	    </wizard>
+	</extension>
+</plugin>

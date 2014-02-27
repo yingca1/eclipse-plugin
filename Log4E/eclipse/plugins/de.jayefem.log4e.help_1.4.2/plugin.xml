@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =======================================================================
+     Copyright:       Copyright (c) 2004
+	 Company:         JayEfEm
+
+	 $Id: plugin.xml,v 1.9 2005/11/20 18:37:10 jan Exp $
+
+	 Projekt:    Log4E Help
+     CVS Module: de.jayefem.log4e.help
+     Author: Jan-Friedrich Mutter (log4e@jayefem.de)
+
+     Description:
+     plugin file
+
+     ======================================================================= -->
+<plugin
+   id="de.jayefem.log4e.help"
+   name="%pluginName"
+   version="1.4.2"
+   provider-name="%providerName">
+
+   <runtime>
+   </runtime>
+
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="toc.xml"
+            primary="true">
+      </toc>
+   </extension>
+</plugin>

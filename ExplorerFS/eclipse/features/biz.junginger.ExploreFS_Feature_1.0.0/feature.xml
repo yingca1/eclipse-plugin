@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="biz.junginger.ExploreFS_Feature"
+      label="ExploreFS Feature"
+      version="1.0.0"
+      provider-name="www.junginger.biz">
+
+   <description url="http://www.junginger.biz/eclipse/">
+      Open the folder of any selected item directly in Windows Explorer
+   </description>
+
+   <copyright>
+      (C) Copyright 2007 Markus Oliver Junginger. All rights reserved.
+   </copyright>
+
+   <license url="http://creativecommons.org/licenses/by-nd/2.0/">
+      Creative Commons License, Attribution-NoDerivs 2.0
+You are free:
+* to copy, distribute, display, and perform the work
+* to make commercial use of the work
+Under the following conditions:
+By Attribution. You must give the original author credit.
+No Derivative Works. You may not alter, transform, or build upon
+this work.
+* For any reuse or distribution, you must make clear to others
+the license terms of this work.
+* Any of these conditions can be waived if you get permission
+from the copyright holder.
+More information: http://creativecommons.org/licenses/by-nd/2.0/
+   </license>
+
+   <url>
+      <update label="junginger.biz (ExploreFS)" url="http://www.junginger.biz/eclipse/"/>
+   </url>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.jdt.core"/>
+   </requires>
+
+   <plugin
+         id="biz.junginger.ExploreFS"
+         download-size="5"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+</feature>

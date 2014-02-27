@@ -1,0 +1,25 @@
+BODY, p, ul, a, li, table {
+	font-size : 10pt;
+	font-family : Verdana,sans-serif;
+	color : Black;
+	background-color : White;
+	font-weight : normal;
+	font-style : normal;
+}
+
+h1 { font-size: 16pt; padding: 0; margin-top: 5; margin-bottom: 1; color : #277DE7; }	
+h2 { font-size: 12pt; margin-top: 25; margin-bottom: 3; color : #277DE7; }
+h3 { font-size: 10pt; margin-top: 25; margin-bottom: 3; color : #277DE7; }
+
+a:link, a:visited { font-family : Verdana,sans-serif; text-decoration: underline; color: Black }
+a:hover { font-family : Verdana,sans-serif; text-decoration: underline; color: #FA832C }
+
+a.h2:link, a.h2:visited { font-size: 12pt; margin-top: 25; margin-bottom: 3; font-weight: bold; text-decoration: none; color: #277DE7 }
+a.h2:hover { font-size: 12pt; margin-top: 25; margin-bottom: 3; font-weight: bold; text-decoration: none; color: #FA832C }
+
+a.sitelink:link, a.sitelink:visited { font-family : Verdana,sans-serif; text-decoration: underline; color: #C40A0E }
+a.sitelink:hover { font-family : Verdana,sans-serif; text-decoration: none; color: ##C40A0E }
+
+.sourcecode { color : #990000; }
+
+
